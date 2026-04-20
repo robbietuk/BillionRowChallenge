@@ -39,3 +39,14 @@
 
 # debug information files
 *.dwo
+# C++ build system and IDE files
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+build/
+*.log
+*.tmp
+*.swp
+*.swo
+*.DS_Store
