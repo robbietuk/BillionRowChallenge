@@ -1,0 +1,3 @@
+add_executable(billionrow_tests test_main.cpp)
+target_link_libraries(billionrow_tests PRIVATE billionrow)
+add_test(NAME AllTests COMMAND billionrow_tests)
