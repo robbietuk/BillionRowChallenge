@@ -2,6 +2,13 @@
 
 This project is my attempt at an implementation and benchmarking of the Java Billion Row Challenge, adapted for C++. The goal is to efficiently process and analyze a dataset containing a billion rows, focusing on performance, memory usage, and code clarity.
 
+## Project Goals
+- **Algorithm Exploration:** Implement, benchmark, and compare multiple algorithms and configurations for data processing, enabling fair and reproducible performance comparisons.
+- **Comprehensive Testing Suite:** Design and maintain an automated testing framework to validate correctness, performance, and scalability of all implemented algorithms under various scenarios and dataset sizes.
+- **Performance Benchmarking:** Establish clear benchmarking protocols and scripts to measure speed, memory consumption, and scalability, with results documented for transparency and future reference.
+- **Learning Advanced C++:** Deepen my understanding of modern C++ (including templates, concurrency, and memory management) through practical, performance-critical coding challenges.
+- **Documentation and Sharing:** Provide clear documentation, code comments, and usage examples to make the project accessible for learning and further development by others.
+
 ## Features
 - High-performance C++ implementation
 - Benchmarking scripts and results
