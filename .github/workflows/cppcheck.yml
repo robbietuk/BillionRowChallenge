@@ -2,17 +2,9 @@ name: Cppcheck
 
 on:
   push:
-    paths:
-      - '**.cpp'
-      - '**.c'
-      - '**.h'
-      - '**.hpp'
+    branches: [ main ]
   pull_request:
-    paths:
-      - '**.cpp'
-      - '**.c'
-      - '**.h'
-      - '**.hpp'
+    branches: [ main ]
 
 jobs:
   cppcheck:
