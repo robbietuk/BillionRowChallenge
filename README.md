@@ -17,6 +17,33 @@ This project is my attempt at an implementation and benchmarking of the Java Bil
 ## Getting Started
 Instructions for building, running, and testing will be added as the project develops.
 
+## Build Instructions
+
+1. Create a build directory:
+   ```sh
+   mkdir build && cd build
+   ```
+2. Run CMake and build:
+   ```sh
+   cmake ..
+   cmake --build .
+   ```
+
+
+## Project Structure
+
+- `source/` - Main source directory
+   - `development/` - Main entry point(s) and app logic
+   - `lib/` - Utility and library code
+- `tests/` - Test code and CMake config
+- `CMakeLists.txt` - Main CMake configuration
+- `build/` - (gitignored) Build output directory
+
+## Executables
+
+- The main development executable is built as `build/source/development`.
+
+
 ## Workflows
 - **Clang Format Check:** Ensures code style consistency using clang-format.
 - **Pre-commit:** Runs pre-commit hooks for code quality.
