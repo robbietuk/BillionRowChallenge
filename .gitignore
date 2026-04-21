@@ -32,10 +32,14 @@
 *.a
 *.lib
 
-# Executables
-*.exe
-*.out
-*.app
+
+# Build output
+build/
+
+# Executables (any subfolder)
+**/*.exe
+**/*.out
+**/*.app
 
 # debug information files
 *.dwo
@@ -44,9 +48,5 @@ CMakeFiles/
 CMakeCache.txt
 cmake_install.cmake
 Makefile
-build/
-*.log
-*.tmp
-*.swp
-*.swo
-*.DS_Store
+# CMake build folder
+/build/
