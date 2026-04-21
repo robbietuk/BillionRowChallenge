@@ -17,9 +17,9 @@ jobs:
     name: Clang Format Check
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - name: Install clang-format
-        run: sudo apt-get install -y clang-format
-      - name: Check formatting
-        run: |
-          find . -regex '.*\(cpp\|h\|hpp\|c\|cc\|cxx\)$' -exec clang-format --dry-run --Werror {} +
+    - uses: RafikFarhad/clang-format-github-action@v6
+      id: clang-format
+      with:
+        sources: "src/**/*.h,src/**/*.c"
+
+    - run: echo "Formatted with clang-format version ${{ steps.clang-format.outputs.clang-format-version }}"
