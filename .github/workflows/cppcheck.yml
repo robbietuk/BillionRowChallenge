@@ -1,7 +1,10 @@
 name: cppcheck-action-test
-on: [push]
+on:
+  push:
+    branches: [ main ]
+  pull_request:
 
-
+jobs:
   build:
     name: cppcheck-test
     runs-on: ubuntu-latest
