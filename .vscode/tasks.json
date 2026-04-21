@@ -1,0 +1,42 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "CMake: configure",
+			"type": "shell",
+			"command": "cmake ..",
+			"options": {
+				"cwd": "${workspaceFolder}/build"
+			},
+			"problemMatcher": "$gcc",
+			"group": "build"
+		},
+		{
+			"label": "CMake: build",
+			"type": "shell",
+			"command": "cmake --build .",
+			"options": {
+				"cwd": "${workspaceFolder}/build"
+			},
+			"problemMatcher": "$gcc",
+			"group": "build",
+			"dependsOn": [
+				"CMake: configure"
+			],
+			"dependsOrder": "sequence",
+		},
+		{
+			"label": "Run BillionRowChallengeCXX",
+			"type": "shell",
+			"command": "./BillionRowChallengeCXX",
+			"options": {
+				"cwd": "${workspaceFolder}/build"
+			},
+			"group": "test",
+			"dependsOn": [
+				"CMake: build"
+			],
+			"dependsOrder": "sequence",
+		}
+	]
+}
