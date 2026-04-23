@@ -1,7 +1,7 @@
-add_library(billionrow STATIC
+add_library(CoreLib STATIC
     lib/util.cpp
 )
-target_include_directories(billionrow PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/lib)
+target_include_directories(CoreLib PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/lib)
 
-add_executable(development development/main.cpp)
-target_link_libraries(development PRIVATE billionrow)
+add_executable(BillionRowChallengeApp development/main.cpp)
+target_link_libraries(BillionRowChallengeApp PRIVATE CoreLib)
