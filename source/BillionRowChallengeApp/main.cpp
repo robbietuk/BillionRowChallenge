@@ -2,6 +2,7 @@
 #include <iostream>
 
 #include "util.hpp"
+#include <DataManager.hpp>
 
 /**
  * @brief Holds application configuration options.
@@ -65,5 +66,20 @@ int main(int argc, char* argv[])
 
     AppConfiguration config = AppConfiguration::ParseArgs(argc, argv);
     config.Print();
+
+    try
+    {
+        DataManager dataManager(config.measurementFile);
+        std::cout << "File size (MB): " << dataManager.GetFileSizeMB()
+                  << std::endl;
+        std::cout << "Estimated number of rows: "
+                  << dataManager.GetEstimateNumberOfRows() << std::endl;
+    }
+    catch (const std::exception& ex)
+    {
+        std::cerr << "Error: " << ex.what() << std::endl;
+        return 1;
+    }
+
     return 0;
 }
