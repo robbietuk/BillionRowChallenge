@@ -6,7 +6,9 @@
             "type": "lldb",
             "request": "launch",
             "program": "${workspaceFolder}/build/source/BillionRowChallengeApp/BillionRowChallengeApp",
-            "args": ["${workspaceFolder}/data/measurements.csv"],
+            "args": [
+                "${workspaceFolder}/data/measurements.csv"
+            ],
             "cwd": "${workspaceFolder}/build",
             "preLaunchTask": "CMake: build"
         }
