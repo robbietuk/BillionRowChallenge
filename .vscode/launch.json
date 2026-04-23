@@ -2,11 +2,11 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "(lldb) Launch BillionRowChallengeCXX",
+            "name": "(lldb) Launch BillionRowChallengeApp",
             "type": "lldb",
             "request": "launch",
-            "program": "${workspaceFolder}/build/BillionRowChallengeCXX",
-            "args": [],
+            "program": "${workspaceFolder}/build/source/BillionRowChallengeApp/BillionRowChallengeApp",
+            "args": ["${workspaceFolder}/data/measurements.csv"],
             "cwd": "${workspaceFolder}/build",
             "preLaunchTask": "CMake: build"
         }
