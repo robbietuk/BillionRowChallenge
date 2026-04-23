@@ -1,6 +1,36 @@
 # BillionRowChallenge
 
-This project is my attempt at an implementation and benchmarking of the Java Billion Row Challenge, adapted for C++. The goal is to efficiently process and analyze a dataset containing a billion rows, focusing on performance, memory usage, and code clarity.
+This project is my attempt at an implementation and benchmarking of the Java Billion Row Challenge, adapted for C++. 
+The goal is to efficiently process and analyze a dataset containing a billion rows, focusing on performance, memory usage, and code clarity.
+
+The Billion Row Challenge is a well-known problem in the data processing community, where the task is to read, process, and analyze a large dataset (often in CSV format) containing a billion rows. 
+The challenge is to do this efficiently, both in terms of speed and memory usage.
+The original can be found here: https://github.com/gunnarmorling/1brc. 
+The record was 1.535 seconds for the entire process, which is quite impressive.
+
+The rough structure is:
+1. 1B rows of data
+1. Each is constructed as: `<City>;<Temperature>
+1. The city is any string.
+1. The temperature is a decimal number to one decimal place, representing the average temperature in Celsius for that city.
+1. Each column is separated by a semicolon (`;`), and each row is dicated by a newline (`\n`).
+1. The dataset is stored in a text file (e.g., `data.csv`) and the full 1B rows is around 12GB in size.
+1. The task is to read the file and compute the minium, maximum, and average temperature for each city, and output the results.
+
+## Example data
+
+```
+Hamburg;12.0
+Bulawayo;8.9
+Palembang;38.8
+St. John's;15.2
+Cracow;12.6
+Bridgetown;26.9
+Istanbul;6.2
+Roseau;34.4
+Conakry;31.2
+Istanbul;23.0
+```
 
 ## Project Goals
 - Explore algorithms and modern C++
