@@ -1,11 +1,11 @@
 # BillionRowChallenge
 
-This project is my attempt at an implementation and benchmarking of the Java Billion Row Challenge, adapted for C++. 
+This project is my attempt at an implementation and benchmarking of the Java Billion Row Challenge, adapted for C++.
 The goal is to efficiently process and analyze a dataset containing a billion rows, focusing on performance, memory usage, and code clarity.
 
-The Billion Row Challenge is a well-known problem in the data processing community, where the task is to read, process, and analyze a large dataset (often in CSV format) containing a billion rows. 
+The Billion Row Challenge is a well-known problem in the data processing community, where the task is to read, process, and analyze a large dataset (often in CSV format) containing a billion rows.
 The challenge is to do this efficiently, both in terms of speed and memory usage.
-The original can be found here: https://github.com/gunnarmorling/1brc. 
+The original can be found here: https://github.com/gunnarmorling/1brc.
 The record was 1.535 seconds for the entire process, which is quite impressive.
 
 The rough structure is:
