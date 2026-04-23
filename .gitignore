@@ -50,3 +50,4 @@ cmake_install.cmake
 Makefile
 # CMake build folder
 /build/
+.vs/
