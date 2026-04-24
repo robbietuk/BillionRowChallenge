@@ -1,12 +1,10 @@
+#pragma once
+#include <string>
 /**
  * @file DataManager.hpp
  * @brief Provides file size and row estimation utilities for measurement data
  * files.
  */
-
-#pragma once
-
-#include <string>
 namespace CoreLib
 {
 /**
@@ -50,8 +48,10 @@ public:
 
     void PrintFileInfo() const;
 
+    std::string GetFilePath() const { return _measurementFilePath; }
+
 private:
     const float _averageRowSizeBytes = 15.7f; ///< Average row size in bytes
     std::string _measurementFilePath;         ///< Path to the measurement file
 };
-}; // namespace CoreLib
+} // namespace CoreLib

@@ -1,5 +1,6 @@
 #pragma once
 #include "DataManager.hpp"
+#include "Statistics.hpp"
 
 namespace CoreLib
 {
@@ -14,6 +15,7 @@ public:
      * @brief Runs the data processing algorithm.
      */
     void Run();
+    virtual Statistics GetCityStatistics(std::string cityName) = 0;
 
 protected:
     /**
