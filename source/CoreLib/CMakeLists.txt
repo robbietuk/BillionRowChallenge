@@ -1,6 +1,4 @@
 add_library(CoreLib STATIC
-    util.hpp
-    util.cpp
     DataManager.hpp
     DataManager.cpp
     DataProcessor.hpp
