@@ -1,4 +1,8 @@
 
+#include <cstddef>
+#include <string>
+#include <vector>
+
 /**
  * @class MeasurementGenerator
  * @brief Generates random weather measurements and writes them to a file.
