@@ -44,12 +44,12 @@ Istanbul;23.0
 *This list is not complete*
 - [x] Setup README and repo basics
 - [x] Init CMake with HelloWorld
-- [ ] Generate data file (<1B rows to start)
-- [ ] Build MVP
-  - [ ] File reader
-  - [ ] Processing algorithm
-- [ ] Build basic benchmarking tools
-- [ ] Benchmark file reading (find SSD/HDD lower bound)
+- [x] Generate data file (<1B rows to start)
+- [x] Build MVP
+  - [x] File reader
+  - [x] Processing algorithm
+- [x] Build basic benchmarking tools
+- [x] Benchmark file reading (find SSD/HDD lower bound)
 - [ ] Profile for bottlenecks
 - [ ] Apply multithreading
 
@@ -64,6 +64,14 @@ Istanbul;23.0
    cmake ..
    cmake --build .
    ```
+
+## Generating Data
+The `GenerateData` executable can be used to create a dataset. Example usage:
+```sh
+./GenerateData <num_records> <output_file>
+```
+This will generate a file with the specified number of records.
+This exe was created by using the Java 1BRC python generator as a reference and re-implementing it in C++. There are some minor differences in implementation, but the output format is the same.
 
 ## Workflows
 - **Clang Format Check:** Ensures code style consistency using clang-format.

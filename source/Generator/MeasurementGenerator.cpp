@@ -12,7 +12,8 @@
 #include <sstream>
 #include <string>
 #include <vector>
-
+namespace Generator
+{
 
 namespace fs = std::filesystem;
 
@@ -171,3 +172,4 @@ int MeasurementGenerator::Run(size_t num_records)
     std::cout << "Test data build complete." << std::endl;
     return 0;
 }
+} // namespace CoreLib

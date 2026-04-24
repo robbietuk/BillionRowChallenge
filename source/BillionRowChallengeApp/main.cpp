@@ -1,7 +1,8 @@
 #include <filesystem>
 #include <iostream>
 
-#include "util.hpp"
+#include <DataManager.hpp>
+#include <DataProcessorAlpha.hpp>
 
 /**
  * @brief Holds application configuration options.
@@ -60,10 +61,40 @@ public:
 
 int main(int argc, char* argv[])
 {
-    std::cout << "Hello, CMake!" << std::endl;
-    foo();
+    std::cout << "Launching BillionRowChallengeApp!" << std::endl;
 
-    AppConfiguration config = AppConfiguration::ParseArgs(argc, argv);
-    config.Print();
+    // Setup configuration
+    std::unique_ptr<AppConfiguration> config;
+    try
+    {
+        config = std::make_unique<AppConfiguration>(
+            AppConfiguration::ParseArgs(argc, argv));
+        config->Print();
+    }
+    catch (const std::exception& ex)
+    {
+        std::cerr << "Error parsing arguments: " << ex.what() << std::endl;
+        return 1;
+    }
+
+    // Setup data manager
+    std::unique_ptr<CoreLib::DataManager> dataManager;
+    try
+    {
+        dataManager =
+            std::make_unique<CoreLib::DataManager>(config->measurementFile);
+        dataManager->PrintFileInfo();
+    }
+    catch (const std::exception& ex)
+    {
+        std::cerr << "Error: " << ex.what() << std::endl;
+        return 1;
+    }
+
+    // Setup and run data processor
+    CoreLib::DataProcessorAlpha dataProcessor =
+        CoreLib::DataProcessorAlpha(dataManager.get());
+    dataProcessor.Run();
+
     return 0;
 }

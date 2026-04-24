@@ -2,7 +2,8 @@
 #include <cstddef>
 #include <string>
 #include <vector>
-
+namespace Generator
+{
 /**
  * @class MeasurementGenerator
  * @brief Generates random weather measurements and writes them to a file.
@@ -56,3 +57,4 @@ private:
     std::string _outputDir;   ///< Output directory for the measurements file
     std::vector<std::string> _stationNames; ///< Cached station names
 };
+}; // namespace Generator
