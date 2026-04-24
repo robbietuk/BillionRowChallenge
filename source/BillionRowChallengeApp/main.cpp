@@ -62,18 +62,24 @@ public:
 int main(int argc, char* argv[])
 {
     std::cout << "Hello, CMake!" << std::endl;
-    CoreLib::foo();
 
-    AppConfiguration config = AppConfiguration::ParseArgs(argc, argv);
-    config.Print();
-
+    std::unique_ptr<AppConfiguration> config;
     try
     {
-        CoreLib::DataManager dataManager(config.measurementFile);
-        std::cout << "File size (MB): " << dataManager.GetFileSizeMB()
-                  << std::endl;
-        std::cout << "Estimated number of rows: "
-                  << dataManager.GetEstimateNumberOfRows() << std::endl;
+        config = std::make_unique<AppConfiguration>(
+            AppConfiguration::ParseArgs(argc, argv));
+        config->Print();
+    }
+    catch (const std::exception& ex)
+    {
+        std::cerr << "Error parsing arguments: " << ex.what() << std::endl;
+        return 1;
+    }
+    std::unique_ptr<CoreLib::DataManager> dataManager;
+    try
+    {
+        dataManager =
+            std::make_unique<CoreLib::DataManager>(config->measurementFile);
     }
     catch (const std::exception& ex)
     {
