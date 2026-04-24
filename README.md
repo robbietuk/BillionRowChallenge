@@ -1,5 +1,7 @@
 # BillionRowChallenge
 
+[![Build and Test (CMake Matrix)](https://github.com/robbietuk/BillionRowChallenge/actions/workflows/build-and-test.yml/badge.svg)](https://github.com/robbietuk/BillionRowChallenge/actions/workflows/build-and-test.yml)
+
 This project is my attempt at an implementation and benchmarking of the Java Billion Row Challenge, adapted for C++.
 The goal is to efficiently process and analyze a dataset containing a billion rows, focusing on performance, memory usage, and code clarity.
 
