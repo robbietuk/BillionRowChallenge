@@ -45,11 +45,11 @@ Istanbul;23.0
 - [x] Setup README and repo basics
 - [x] Init CMake with HelloWorld
 - [x] Generate data file (<1B rows to start)
-- [ ] Build MVP
-  - [ ] File reader
-  - [ ] Processing algorithm
-- [ ] Build basic benchmarking tools
-- [ ] Benchmark file reading (find SSD/HDD lower bound)
+- [x] Build MVP
+  - [x] File reader
+  - [x] Processing algorithm
+- [x] Build basic benchmarking tools
+- [x] Benchmark file reading (find SSD/HDD lower bound)
 - [ ] Profile for bottlenecks
 - [ ] Apply multithreading
 
