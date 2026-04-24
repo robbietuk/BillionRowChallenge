@@ -53,7 +53,7 @@ int main(int argc, char* argv[])
         return 2;
     }
     // Generate measurements
-    MeasurementGenerator generator(station_file, output_dir);
+    Generator::MeasurementGenerator generator(station_file, output_dir);
     int result = generator.Run(num_records);
     if (result != 0)
     {

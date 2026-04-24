@@ -1,6 +1,8 @@
 #pragma once
 
 #include <string>
+namespace CoreLib
+{
 class DataManager
 {
 public:
@@ -14,3 +16,4 @@ private:
     const float averageRowSizeBytes = 15.7f;
     std::string measurementFilePath;
 };
+}; // namespace CoreLib

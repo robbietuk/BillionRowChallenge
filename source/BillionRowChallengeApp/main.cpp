@@ -62,14 +62,14 @@ public:
 int main(int argc, char* argv[])
 {
     std::cout << "Hello, CMake!" << std::endl;
-    foo();
+    CoreLib::foo();
 
     AppConfiguration config = AppConfiguration::ParseArgs(argc, argv);
     config.Print();
 
     try
     {
-        DataManager dataManager(config.measurementFile);
+        CoreLib::DataManager dataManager(config.measurementFile);
         std::cout << "File size (MB): " << dataManager.GetFileSizeMB()
                   << std::endl;
         std::cout << "Estimated number of rows: "

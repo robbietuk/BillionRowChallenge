@@ -4,6 +4,8 @@
 #include <iostream>
 #include <print>
 
+namespace CoreLib
+{
 DataManager::DataManager(std::string measurementFilePath)
     : measurementFilePath(measurementFilePath)
 {
@@ -27,3 +29,4 @@ int DataManager::GetEstimateNumberOfRows()
 {
     return GetFileSizeBytes() / averageRowSizeBytes;
 }
+}; // namespace CoreLib
