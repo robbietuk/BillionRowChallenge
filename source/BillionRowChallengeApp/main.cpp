@@ -3,6 +3,7 @@
 
 #include "util.hpp"
 #include <DataManager.hpp>
+#include <DataProcessorBasic.hpp>
 
 /**
  * @brief Holds application configuration options.
@@ -86,6 +87,10 @@ int main(int argc, char* argv[])
         std::cerr << "Error: " << ex.what() << std::endl;
         return 1;
     }
+    dataManager->PrintFileInfo();
+
+    CoreLib::DataProcessorBasic dataProcessor =
+        CoreLib::DataProcessorBasic(dataManager.get());
 
     return 0;
 }
