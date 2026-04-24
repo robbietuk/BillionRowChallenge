@@ -2,6 +2,13 @@
     "version": "2.0.0",
     "tasks": [
         {
+            "label": "Make Build Directory",
+            "type": "shell",
+            "command": "mkdir -p ${workspaceFolder}/build",
+            "problemMatcher": [],
+            "group": "build"
+        },
+        {
             "label": "CMake: configure",
             "type": "shell",
             "command": "cmake ..",
@@ -9,7 +16,10 @@
                 "cwd": "${workspaceFolder}/build"
             },
             "problemMatcher": "$gcc",
-            "group": "build"
+            "group": "build",
+            "dependsOn": [
+                "Make Build Directory",
+            ],
         },
         {
             "label": "CMake: build",
