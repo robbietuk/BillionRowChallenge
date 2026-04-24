@@ -12,7 +12,7 @@ The record was 1.535 seconds for the entire process, which is quite impressive.
 
 The rough structure is:
 1. 1B rows of data
-1. Each is constructed as: `<City>;<Temperature>
+1. Each is constructed as: `<*City*>;<*Temperature*>`
 1. The city is any string.
 1. The temperature is a decimal number to one decimal place, representing the average temperature in Celsius for that city.
 1. Each column is separated by a semicolon (`;`), and each row is dicated by a newline (`\n`).
