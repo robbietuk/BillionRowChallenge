@@ -7,7 +7,7 @@
             "request": "launch",
             "program": "${workspaceFolder}/build/source/BillionRowChallengeApp/BillionRowChallengeApp",
             "args": [
-                "${workspaceFolder}/data/measurements.csv"
+                "${workspaceFolder}/data/measurements.txt"
             ],
             "cwd": "${workspaceFolder}/build",
             "preLaunchTask": "CMake: build"
