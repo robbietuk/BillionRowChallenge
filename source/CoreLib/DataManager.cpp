@@ -19,7 +19,7 @@ namespace CoreLib
  * @throws std::runtime_error if the file does not exist.
  */
 DataManager::DataManager(std::string measurementFilePath)
-    : measurementFilePath(measurementFilePath)
+    : _measurementFilePath(measurementFilePath)
 {
     if (!std::filesystem::exists(measurementFilePath))
     {
@@ -32,30 +32,37 @@ DataManager::DataManager(std::string measurementFilePath)
  * @brief Gets the file size in bytes.
  * @return File size in bytes.
  */
-int DataManager::GetFileSizeBytes()
+int DataManager::GetFileSizeBytes() const
 {
-    return std::filesystem::file_size(measurementFilePath);
+    return std::filesystem::file_size(_measurementFilePath);
 }
 
 /**
  * @brief Gets the file size in kilobytes.
  * @return File size in kB.
  */
-int DataManager::GetFileSizekB() { return GetFileSizeBytes() / 1024; }
+int DataManager::GetFileSizekB() const { return GetFileSizeBytes() / 1024; }
 
 /**
  * @brief Gets the file size in megabytes.
  * @return File size in MB.
  */
-int DataManager::GetFileSizeMB() { return GetFileSizekB() / 1024; }
+int DataManager::GetFileSizeMB() const { return GetFileSizekB() / 1024; }
 
 /**
  * @brief Estimates the number of rows in the file based on average row size.
  * @return Estimated number of rows.
  */
-int DataManager::GetEstimateNumberOfRows()
+int DataManager::GetEstimateNumberOfRows() const
 {
-    return GetFileSizeBytes() / averageRowSizeBytes;
+    return GetFileSizeBytes() / _averageRowSizeBytes;
+}
+
+void DataManager::PrintFileInfo() const
+{
+    std::cout << "File size (MB): " << GetFileSizeMB() << std::endl;
+    std::cout << "Estimated number of rows: " << GetEstimateNumberOfRows()
+              << std::endl;
 }
 
 }; // namespace CoreLib

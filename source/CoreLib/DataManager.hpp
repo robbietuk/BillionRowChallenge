@@ -27,29 +27,31 @@ public:
      * @brief Gets the file size in bytes.
      * @return File size in bytes.
      */
-    int GetFileSizeBytes();
+    int GetFileSizeBytes() const;
 
     /**
      * @brief Gets the file size in kilobytes.
      * @return File size in kB.
      */
-    int GetFileSizekB();
+    int GetFileSizekB() const;
 
     /**
      * @brief Gets the file size in megabytes.
      * @return File size in MB.
      */
-    int GetFileSizeMB();
+    int GetFileSizeMB() const;
 
     /**
      * @brief Estimates the number of rows in the file based on average row
      * size.
      * @return Estimated number of rows.
      */
-    int GetEstimateNumberOfRows();
+    int GetEstimateNumberOfRows() const;
+
+    void PrintFileInfo() const;
 
 private:
-    const float averageRowSizeBytes = 15.7f; ///< Average row size in bytes
-    std::string measurementFilePath;         ///< Path to the measurement file
+    const float _averageRowSizeBytes = 15.7f; ///< Average row size in bytes
+    std::string _measurementFilePath;         ///< Path to the measurement file
 };
 }; // namespace CoreLib
