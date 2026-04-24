@@ -1,4 +1,3 @@
-
 /**
  * @file DataManager.cpp
  * @brief Implements file size and row estimation utilities for measurement data
