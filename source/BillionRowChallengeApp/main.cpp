@@ -1,3 +1,4 @@
+#include <filesystem>
 #include <iostream>
 
 #include "util.hpp"
@@ -49,6 +50,10 @@ public:
     {
         std::string msg = "BillionRowChallengeApp Configuration:\n";
         msg += "  Measurements file: " + measurementFile + "\n";
+        msg += "  Exists: " +
+               std::string(std::filesystem::exists(measurementFile) ? "Yes"
+                                                                    : "No") +
+               "\n";
         std::cout << msg;
     }
 };

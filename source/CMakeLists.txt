@@ -1,2 +1,3 @@
 add_subdirectory(CoreLib)
 add_subdirectory(BillionRowChallengeApp)
+add_subdirectory(Generator)
