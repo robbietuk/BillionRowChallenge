@@ -11,7 +11,6 @@ public:
     int GetEstimateNumberOfRows();
 
 private:
-    const float averageRowSizeBytes =
-        15.2f; // This is a rough estimate, adjust as needed
+    const float averageRowSizeBytes = 15.7f;
     std::string measurementFilePath;
 };
