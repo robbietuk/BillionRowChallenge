@@ -44,7 +44,7 @@ Istanbul;23.0
 *This list is not complete*
 - [x] Setup README and repo basics
 - [x] Init CMake with HelloWorld
-- [ ] Generate data file (<1B rows to start)
+- [x] Generate data file (<1B rows to start)
 - [ ] Build MVP
   - [ ] File reader
   - [ ] Processing algorithm
@@ -64,6 +64,14 @@ Istanbul;23.0
    cmake ..
    cmake --build .
    ```
+
+## Generating Data
+The `GenerateData` executable can be used to create a dataset. Example usage:
+```sh
+./GenerateData <num_records> <output_file>
+```
+This will generate a file with the specified number of records.
+This exe was created by using the Java 1BRC python generator as a reference and re-implementing it in C++. There are some minor differences in implementation, but the output format is the same.
 
 ## Workflows
 - **Clang Format Check:** Ensures code style consistency using clang-format.
