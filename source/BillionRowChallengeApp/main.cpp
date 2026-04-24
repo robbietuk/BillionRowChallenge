@@ -3,7 +3,7 @@
 
 #include "util.hpp"
 #include <DataManager.hpp>
-#include <DataProcessorBasic.hpp>
+#include <DataProcessorAlpha.hpp>
 
 /**
  * @brief Holds application configuration options.
@@ -62,8 +62,9 @@ public:
 
 int main(int argc, char* argv[])
 {
-    std::cout << "Hello, CMake!" << std::endl;
+    std::cout << "Launching BillionRowChallengeApp!" << std::endl;
 
+    // Setup configuration
     std::unique_ptr<AppConfiguration> config;
     try
     {
@@ -76,21 +77,25 @@ int main(int argc, char* argv[])
         std::cerr << "Error parsing arguments: " << ex.what() << std::endl;
         return 1;
     }
+
+    // Setup data manager
     std::unique_ptr<CoreLib::DataManager> dataManager;
     try
     {
         dataManager =
             std::make_unique<CoreLib::DataManager>(config->measurementFile);
+        dataManager->PrintFileInfo();
     }
     catch (const std::exception& ex)
     {
         std::cerr << "Error: " << ex.what() << std::endl;
         return 1;
     }
-    dataManager->PrintFileInfo();
 
-    CoreLib::DataProcessorBasic dataProcessor =
-        CoreLib::DataProcessorBasic(dataManager.get());
+    // Setup and run data processor
+    CoreLib::DataProcessorAlpha dataProcessor =
+        CoreLib::DataProcessorAlpha(dataManager.get());
+    dataProcessor.Run();
 
     return 0;
 }
