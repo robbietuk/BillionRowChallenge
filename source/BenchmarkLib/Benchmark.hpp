@@ -24,7 +24,7 @@ public:
     {
     }
 
-    void RunBenchmark();
+    void Run();
     void PrintResults() const { _statistics.Print(); }
 
 private:

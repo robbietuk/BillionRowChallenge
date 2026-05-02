@@ -98,7 +98,7 @@ int main(int argc, char* argv[])
         std::make_unique<AlgorithmsLib::DataProcessorAlpha>(dataManager.get());
 
     BenchmarkLib::Benchmark benchmark(*dataProcessor);
-    benchmark.RunBenchmark();
+    benchmark.Run();
     benchmark.PrintResults();
 
     return 0;

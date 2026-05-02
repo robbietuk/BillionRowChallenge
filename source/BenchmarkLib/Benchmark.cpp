@@ -6,7 +6,7 @@
 
 using namespace BenchmarkLib;
 
-void BenchmarkLib::Benchmark::RunBenchmark()
+void BenchmarkLib::Benchmark::Run()
 {
     try
     {
