@@ -18,13 +18,12 @@ public:
      * @brief Constructs DataProcessorAlpha with a DataManager pointer.
      * @param dataManager Non-owning pointer to a DataManager instance.
      */
-    DataProcessorAlpha(const DataManager* dataManager, std::string algorithmName = "DataProcessorAlpha");
-    Statistics GetCityStatistics(std::string cityName) override
+    DataProcessorAlpha(const DataManager* dataManager)
+        : DataProcessor(dataManager, "DataProcessorAlpha")
     {
-        if (!_cityStats.contains(cityName))
-            throw std::runtime_error("City not found: " + cityName);
-        return _cityStats.find(cityName)->second;
     }
+
+    Statistics GetCityStatistics(std::string cityName) override;
 
 protected:
     /**
@@ -32,9 +31,6 @@ protected:
      */
     void AlgorithmImplementation() override;
     void AddMeasurementToCityStats(const std::string& city, float measurement);
-
-    // Dictionary to hold city statistics, e.g., sum, count, max, min for each
-    // city
     std::unordered_map<std::string, StatisticsAlpha> _cityStats;
 };
 

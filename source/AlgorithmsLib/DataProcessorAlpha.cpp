@@ -2,14 +2,13 @@
 #include <fstream>
 
 using namespace AlgorithmsLib;
-/**
- * @file DataProcessorAlpha.cpp
- * @brief Implements the DataProcessorAlpha algorithm example.
- */
-DataProcessorAlpha::DataProcessorAlpha(const DataManager* dataManager,
-                                       std::string algorithmName)
-    : DataProcessor(dataManager, std::move(algorithmName))
+
+Statistics
+AlgorithmsLib::DataProcessorAlpha::GetCityStatistics(std::string cityName)
 {
+    if (!_cityStats.contains(cityName))
+        throw std::runtime_error("City not found: " + cityName);
+    return _cityStats.find(cityName)->second;
 }
 
 /**
