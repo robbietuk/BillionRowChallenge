@@ -97,7 +97,7 @@ int main(int argc, char* argv[])
     std::unique_ptr<AlgorithmsLib::DataProcessorAlpha> dataProcessor =
         std::make_unique<AlgorithmsLib::DataProcessorAlpha>(dataManager.get());
 
-    BenchmarkLib::Benchmark benchmark(dataProcessor.get());
+    BenchmarkLib::Benchmark benchmark(*dataProcessor);
     benchmark.RunBenchmark();
     benchmark.PrintResults();
 

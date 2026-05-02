@@ -11,7 +11,7 @@ void BenchmarkLib::Benchmark::RunBenchmark()
     try
     {
         _statistics.Start();
-        _processor->Run();
+        _processor.Run();
         _statistics.End();
     }
     catch (const std::exception& ex)

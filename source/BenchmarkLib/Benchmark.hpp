@@ -17,19 +17,19 @@ namespace BenchmarkLib
 /// statistical significance of the results.
 class Benchmark
 {
-private:
-    AlgorithmsLib::DataProcessor* _processor;
-
-    BenchmarkStatistics _statistics;
 
 public:
-    Benchmark(AlgorithmsLib::DataProcessor* processor)
-        : _processor(processor), _statistics(processor)
+    explicit Benchmark(AlgorithmsLib::DataProcessor& processor)
+        : _processor(processor), _statistics(&_processor)
     {
     }
 
     void RunBenchmark();
     void PrintResults() const { _statistics.Print(); }
+
+private:
+    AlgorithmsLib::DataProcessor& _processor;
+    BenchmarkStatistics _statistics;
 };
 
 } // namespace BenchmarkLib
