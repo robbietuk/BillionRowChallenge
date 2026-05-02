@@ -26,7 +26,11 @@ protected:
      * @param algorithmName Name of the algorithm implemented by the derived
      * class.
      */
-    DataProcessor(const DataManager* dataManager, std::string algorithmName);
+    DataProcessor(const DataManager* dataManager, std::string algorithmName)
+        : _dataManager(dataManager), _algorithmName(std::move(algorithmName))
+    {
+    }
+
     /**
      * @brief Virtual destructor for safe polymorphic use.
      */
