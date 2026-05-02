@@ -1,5 +1,6 @@
 #include <filesystem>
 #include <iostream>
+#include <memory>
 
 #include <DataManager.hpp>
 #include <DataProcessorAlpha.hpp>
