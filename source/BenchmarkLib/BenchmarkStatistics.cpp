@@ -1,6 +1,7 @@
 #include "BenchmarkStatistics.hpp"
 #include <chrono>
 #include <iostream>
+#include <stdexcept>
 
 using namespace BenchmarkLib;
 
