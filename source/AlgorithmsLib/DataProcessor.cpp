@@ -11,8 +11,9 @@
  * @brief Constructs a DataProcessor with a DataManager pointer.
  * @param dataManager Non-owning pointer to a DataManager instance.
  */
-AlgorithmsLib::DataProcessor::DataProcessor(const DataManager* dataManager)
-    : _dataManager(dataManager)
+AlgorithmsLib::DataProcessor::DataProcessor(const DataManager* dataManager,
+                                            std::string algorithmName)
+    : _dataManager(dataManager), _algorithmName(std::move(algorithmName))
 {
 }
 

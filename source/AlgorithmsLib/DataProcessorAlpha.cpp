@@ -6,8 +6,9 @@ using namespace AlgorithmsLib;
  * @file DataProcessorAlpha.cpp
  * @brief Implements the DataProcessorAlpha algorithm example.
  */
-DataProcessorAlpha::DataProcessorAlpha(const DataManager* dataManager)
-    : DataProcessor(dataManager)
+DataProcessorAlpha::DataProcessorAlpha(const DataManager* dataManager,
+                                       std::string algorithmName)
+    : DataProcessor(dataManager, std::move(algorithmName))
 {
 }
 

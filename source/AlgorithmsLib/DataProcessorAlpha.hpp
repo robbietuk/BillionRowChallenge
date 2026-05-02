@@ -18,7 +18,7 @@ public:
      * @brief Constructs DataProcessorAlpha with a DataManager pointer.
      * @param dataManager Non-owning pointer to a DataManager instance.
      */
-    DataProcessorAlpha(const DataManager* dataManager);
+    DataProcessorAlpha(const DataManager* dataManager, std::string algorithmName = "DataProcessorAlpha");
     Statistics GetCityStatistics(std::string cityName) override
     {
         if (!_cityStats.contains(cityName))
