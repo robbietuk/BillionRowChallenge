@@ -2,6 +2,7 @@
 #include <iostream>
 #include <memory>
 
+#include <Benchmark.hpp>
 #include <DataManager.hpp>
 #include <DataProcessorAlpha.hpp>
 
@@ -93,9 +94,12 @@ int main(int argc, char* argv[])
     }
 
     // Setup and run data processor
-    AlgorithmsLib::DataProcessorAlpha dataProcessor =
-        AlgorithmsLib::DataProcessorAlpha(dataManager.get());
-    dataProcessor.Run();
+    std::unique_ptr<AlgorithmsLib::DataProcessorAlpha> dataProcessor =
+        std::make_unique<AlgorithmsLib::DataProcessorAlpha>(dataManager.get());
+
+    BenchmarkLib::Benchmark benchmark(*dataProcessor);
+    benchmark.Run();
+    benchmark.PrintResults();
 
     return 0;
 }
