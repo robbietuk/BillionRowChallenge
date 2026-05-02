@@ -1,2 +1,5 @@
-add_executable(BillionRowChallengeApp main.cpp)
-target_link_libraries(BillionRowChallengeApp PRIVATE AlgorithmsLib BenchmarkLib)
+add_executable(
+    BillionRowChallengeApp 
+    main.cpp
+    )
+target_link_libraries(BillionRowChallengeApp PRIVATE BenchmarkLib)
