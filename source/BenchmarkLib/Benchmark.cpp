@@ -20,5 +20,4 @@ void BenchmarkLib::Benchmark::RunBenchmark()
         std::cerr << "Error during algorithm execution: " << ex.what()
                   << std::endl;
     }
-    _statistics.Print();
 }
