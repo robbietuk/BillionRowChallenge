@@ -17,10 +17,9 @@ namespace BenchmarkLib
 class Benchmark
 {
 private:
-    AlgorithmsLib::DataProcessor*
-        _processor; ///< Pointer to the DataProcessor being benchmarked
+    AlgorithmsLib::DataProcessor* _processor;
 
-    BenchmarkStatistics _statistics; ///< Struct to hold benchmark results
+    BenchmarkStatistics _statistics;
 
 public:
     Benchmark(AlgorithmsLib::DataProcessor* processor)

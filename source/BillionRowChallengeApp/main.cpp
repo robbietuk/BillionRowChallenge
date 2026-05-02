@@ -94,10 +94,10 @@ int main(int argc, char* argv[])
     }
 
     // Setup and run data processor
-    AlgorithmsLib::DataProcessorAlpha dataProcessor =
-        AlgorithmsLib::DataProcessorAlpha(dataManager.get());
+    std::unique_ptr<AlgorithmsLib::DataProcessorAlpha> dataProcessor =
+        std::make_unique<AlgorithmsLib::DataProcessorAlpha>(dataManager.get());
 
-    BenchmarkLib::Benchmark benchmark(&dataProcessor);
+    BenchmarkLib::Benchmark benchmark(dataProcessor.get());
     benchmark.RunBenchmark();
     benchmark.PrintResults();
 
