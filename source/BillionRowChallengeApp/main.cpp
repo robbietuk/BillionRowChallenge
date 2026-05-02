@@ -1,5 +1,6 @@
 #include <filesystem>
 #include <iostream>
+#include <memory>
 
 #include <DataManager.hpp>
 #include <DataProcessorAlpha.hpp>
@@ -78,11 +79,11 @@ int main(int argc, char* argv[])
     }
 
     // Setup data manager
-    std::unique_ptr<CoreLib::DataManager> dataManager;
+    std::unique_ptr<AlgorithmsLib::DataManager> dataManager;
     try
     {
-        dataManager =
-            std::make_unique<CoreLib::DataManager>(config->measurementFile);
+        dataManager = std::make_unique<AlgorithmsLib::DataManager>(
+            config->measurementFile);
         dataManager->PrintFileInfo();
     }
     catch (const std::exception& ex)
@@ -92,8 +93,8 @@ int main(int argc, char* argv[])
     }
 
     // Setup and run data processor
-    CoreLib::DataProcessorAlpha dataProcessor =
-        CoreLib::DataProcessorAlpha(dataManager.get());
+    AlgorithmsLib::DataProcessorAlpha dataProcessor =
+        AlgorithmsLib::DataProcessorAlpha(dataManager.get());
     dataProcessor.Run();
 
     return 0;

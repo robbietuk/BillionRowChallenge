@@ -50,6 +50,9 @@ Istanbul;23.0
   - [x] Processing algorithm
 - [x] Build basic benchmarking tools
 - [x] Benchmark file reading (find SSD/HDD lower bound)
+- [x] Separate libraries
+  - [x] Benchmarking
+  - [x] Algorithms
 - [ ] Profile for bottlenecks
 - [ ] Apply multithreading
 

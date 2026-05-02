@@ -8,7 +8,7 @@
 #include <filesystem>
 #include <iostream>
 
-namespace CoreLib
+namespace AlgorithmsLib
 {
 
 /**
@@ -63,4 +63,4 @@ void DataManager::PrintFileInfo() const
               << std::endl;
 }
 
-}; // namespace CoreLib
+}; // namespace AlgorithmsLib

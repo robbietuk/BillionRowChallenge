@@ -1,6 +1,7 @@
 /**
  * @file DataProcessor.cpp
- * @brief Implements the DataProcessor base class for measurement data processing.
+ * @brief Implements the DataProcessor base class for measurement data
+ * processing.
  */
 #include "DataProcessor.hpp"
 #include <chrono>
@@ -10,7 +11,7 @@
  * @brief Constructs a DataProcessor with a DataManager pointer.
  * @param dataManager Non-owning pointer to a DataManager instance.
  */
-CoreLib::DataProcessor::DataProcessor(const DataManager* dataManager)
+AlgorithmsLib::DataProcessor::DataProcessor(const DataManager* dataManager)
     : _dataManager(dataManager)
 {
 }
@@ -18,7 +19,7 @@ CoreLib::DataProcessor::DataProcessor(const DataManager* dataManager)
 /**
  * @brief Runs the data processing algorithm and measures execution time.
  */
-void CoreLib::DataProcessor::Run()
+void AlgorithmsLib::DataProcessor::Run()
 {
     try
     {
@@ -31,8 +32,9 @@ void CoreLib::DataProcessor::Run()
         std::string msg = "Algorithm executed in " + durationStr;
         std::cout << msg << std::endl;
     }
-    catch(const std::exception& ex)
+    catch (const std::exception& ex)
     {
-        std::cerr << "Error during algorithm execution: " << ex.what() << std::endl;
+        std::cerr << "Error during algorithm execution: " << ex.what()
+                  << std::endl;
     }
 }

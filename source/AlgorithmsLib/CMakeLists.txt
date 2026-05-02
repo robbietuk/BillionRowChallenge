@@ -1,4 +1,4 @@
-add_library(CoreLib STATIC
+add_library(AlgorithmsLib STATIC
     DataManager.hpp
     DataManager.cpp
     DataProcessor.hpp
@@ -7,4 +7,4 @@ add_library(CoreLib STATIC
     DataProcessorAlpha.cpp 
     Statistics.hpp
 )
-target_include_directories(CoreLib PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+target_include_directories(AlgorithmsLib PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})

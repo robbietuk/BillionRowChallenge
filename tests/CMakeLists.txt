@@ -1,3 +1,4 @@
 add_executable(Tests test_main.cpp)
-target_link_libraries(Tests PRIVATE CoreLib)
-add_test(NAME AllTests COMMAND billionrow_tests)
+target_link_libraries(Tests PRIVATE AlgorithmsLib BenchmarkLib)
+enable_testing()
+add_test(NAME AllTests COMMAND $<TARGET_FILE:Tests>)
