@@ -172,4 +172,4 @@ int MeasurementGenerator::Run(size_t num_records)
     std::cout << "Test data build complete." << std::endl;
     return 0;
 }
-} // namespace AlgorithmsLib
+} // namespace Generator
