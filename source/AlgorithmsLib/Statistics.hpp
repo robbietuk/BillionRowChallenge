@@ -1,7 +1,8 @@
 #pragma once
 #include <limits>
 
-namespace CoreLib {
+namespace AlgorithmsLib
+{
 class Statistics
 {
 public:
@@ -45,4 +46,4 @@ public:
         count++;
     }
 };
-} // namespace CoreLib
+} // namespace AlgorithmsLib

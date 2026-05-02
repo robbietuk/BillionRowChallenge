@@ -1,7 +1,7 @@
 #include "DataProcessorAlpha.hpp"
 #include <fstream>
 
-using namespace CoreLib;
+using namespace AlgorithmsLib;
 /**
  * @file DataProcessorAlpha.cpp
  * @brief Implements the DataProcessorAlpha algorithm example.
@@ -31,10 +31,9 @@ void DataProcessorAlpha::AlgorithmImplementation()
     }
     std::cout << "Finished processing data. Total lines read: " << numLinesRead
               << std::endl;
-
 }
 
-void CoreLib::DataProcessorAlpha::AddMeasurementToCityStats(
+void AlgorithmsLib::DataProcessorAlpha::AddMeasurementToCityStats(
     const std::string& city, float measurement)
 {
     if (!_cityStats.contains(city))

@@ -1,3 +1,4 @@
-add_subdirectory(CoreLib)
+add_subdirectory(AlgorithmsLib)
+add_subdirectory(BenchmarkLib)
 add_subdirectory(BillionRowChallengeApp)
 add_subdirectory(Generator)

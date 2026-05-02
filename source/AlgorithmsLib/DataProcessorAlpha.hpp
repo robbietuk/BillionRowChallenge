@@ -1,11 +1,11 @@
 #pragma once
 #include "DataManager.hpp"
 #include "DataProcessor.hpp"
+#include <Statistics.hpp>
 #include <iostream>
 #include <unordered_map>
-#include <Statistics.hpp>
 
-namespace CoreLib
+namespace AlgorithmsLib
 {
 /**
  * @class DataProcessorAlpha
@@ -30,7 +30,7 @@ protected:
     /**
      * @brief Implements the specific data processing algorithm.
      */
-    void AlgorithmImplementation() override; 
+    void AlgorithmImplementation() override;
     void AddMeasurementToCityStats(const std::string& city, float measurement);
 
     // Dictionary to hold city statistics, e.g., sum, count, max, min for each
@@ -38,4 +38,4 @@ protected:
     std::unordered_map<std::string, StatisticsAlpha> _cityStats;
 };
 
-}; // namespace CoreLib
+}; // namespace AlgorithmsLib

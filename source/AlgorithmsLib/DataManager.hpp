@@ -5,7 +5,7 @@
  * @brief Provides file size and row estimation utilities for measurement data
  * files.
  */
-namespace CoreLib
+namespace AlgorithmsLib
 {
 /**
  * @class DataManager
@@ -54,4 +54,4 @@ private:
     const float _averageRowSizeBytes = 15.7f; ///< Average row size in bytes
     std::string _measurementFilePath;         ///< Path to the measurement file
 };
-} // namespace CoreLib
+} // namespace AlgorithmsLib

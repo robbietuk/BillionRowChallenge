@@ -2,11 +2,12 @@
 #include "DataManager.hpp"
 #include "Statistics.hpp"
 
-namespace CoreLib
+namespace AlgorithmsLib
 {
 /**
  * @class DataProcessor
- * @brief Abstract base class for processing measurement data using a DataManager.
+ * @brief Abstract base class for processing measurement data using a
+ * DataManager.
  */
 class DataProcessor
 {
@@ -27,10 +28,10 @@ protected:
      * @brief Virtual destructor for safe polymorphic use.
      */
     virtual ~DataProcessor() = default;
-    const DataManager* _dataManager;    ///< Non-owning pointer, readable here
+    const DataManager* _dataManager; ///< Non-owning pointer, readable here
     /**
      * @brief Algorithm implementation to be provided by derived classes.
      */
     virtual void AlgorithmImplementation() = 0;
 };
-} // namespace CoreLib
+} // namespace AlgorithmsLib
