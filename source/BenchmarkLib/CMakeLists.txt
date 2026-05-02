@@ -6,4 +6,3 @@ add_library(BenchmarkLib STATIC
 )
 target_include_directories(BenchmarkLib PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 target_link_libraries(BenchmarkLib PUBLIC AlgorithmsLib)
-        
