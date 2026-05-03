@@ -4,6 +4,8 @@
  * processing.
  */
 #include "DataProcessor.hpp"
+#include "DataProcessorAlpha.hpp"
+#include <array>
 #include <chrono>
 #include <iostream>
 
