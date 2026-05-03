@@ -23,6 +23,11 @@ public:
     {
     }
 
+    static std::unique_ptr<DataProcessor> Create(const DataManager* dataManager)
+    {
+        return std::make_unique<DataProcessorAlpha>(dataManager);
+    }
+
     Statistics GetCityStatistics(std::string cityName) override;
 
 protected:
