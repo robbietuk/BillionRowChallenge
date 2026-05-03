@@ -2,15 +2,26 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "(lldb) Launch BillionRowChallengeApp",
+            "name": "(lldb) Launch BillionRowChallengeApp (Debug)",
             "type": "lldb",
             "request": "launch",
-            "program": "${workspaceFolder}/build/source/BillionRowChallengeApp/BillionRowChallengeApp",
+            "program": "${workspaceFolder}/build/Debug/source/BillionRowChallengeApp/BillionRowChallengeApp",
             "args": [
                 "${workspaceFolder}/data/measurements.txt"
             ],
-            "cwd": "${workspaceFolder}/build",
-            "preLaunchTask": "CMake: build"
+            "cwd": "${workspaceFolder}/build/Debug",
+            "preLaunchTask": "CMake: build (Debug)"
+        },
+        {
+            "name": "(lldb) Launch BillionRowChallengeApp (Release)",
+            "type": "lldb",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/Release/source/BillionRowChallengeApp/BillionRowChallengeApp",
+            "args": [
+                "${workspaceFolder}/data/measurements.txt"
+            ],
+            "cwd": "${workspaceFolder}/build/Release",
+            "preLaunchTask": "CMake: build (Release)"
         }
     ]
 }

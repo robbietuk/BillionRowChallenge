@@ -2,51 +2,74 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "Make Build Directory",
+            "label": "Make Build Directory (Debug)",
             "type": "shell",
-            "command": "mkdir -p ${workspaceFolder}/build",
+            "command": "mkdir -p ${workspaceFolder}/build/Debug",
             "problemMatcher": [],
             "group": "build"
         },
         {
-            "label": "CMake: configure",
+            "label": "Make Build Directory (Release)",
             "type": "shell",
-            "command": "cmake ..",
+            "command": "mkdir -p ${workspaceFolder}/build/Release",
+            "problemMatcher": [],
+            "group": "build"
+        },
+        {
+            "label": "CMake: configure (Debug)",
+            "type": "shell",
+            "command": "cmake ../.. -DCMAKE_BUILD_TYPE=Debug",
             "options": {
-                "cwd": "${workspaceFolder}/build"
+                "cwd": "${workspaceFolder}/build/Debug"
             },
             "problemMatcher": "$gcc",
             "group": "build",
             "dependsOn": [
-                "Make Build Directory",
+                "Make Build Directory (Debug)"
             ],
+            "dependsOrder": "sequence"
         },
         {
-            "label": "CMake: build",
+            "label": "CMake: configure (Release)",
+            "type": "shell",
+            "command": "cmake ../.. -DCMAKE_BUILD_TYPE=Release",
+            "options": {
+                "cwd": "${workspaceFolder}/build/Release"
+            },
+            "problemMatcher": "$gcc",
+            "group": "build",
+            "dependsOn": [
+                "Make Build Directory (Release)"
+            ],
+            "dependsOrder": "sequence"
+        },
+        {
+            "label": "CMake: build (Debug)",
             "type": "shell",
             "command": "cmake --build .",
             "options": {
-                "cwd": "${workspaceFolder}/build"
+                "cwd": "${workspaceFolder}/build/Debug"
             },
             "problemMatcher": "$gcc",
             "group": "build",
             "dependsOn": [
-                "CMake: configure"
+                "CMake: configure (Debug)"
             ],
             "dependsOrder": "sequence"
         },
         {
-            "label": "Run BillionRowChallengeCXX",
+            "label": "CMake: build (Release)",
             "type": "shell",
-            "command": "./BillionRowChallengeCXX",
+            "command": "cmake --build .",
             "options": {
-                "cwd": "${workspaceFolder}/build"
+                "cwd": "${workspaceFolder}/build/Release"
             },
-            "group": "test",
+            "problemMatcher": "$gcc",
+            "group": "build",
             "dependsOn": [
-                "CMake: build"
+                "CMake: configure (Release)"
             ],
             "dependsOrder": "sequence"
-        },
+        }
     ]
 }
